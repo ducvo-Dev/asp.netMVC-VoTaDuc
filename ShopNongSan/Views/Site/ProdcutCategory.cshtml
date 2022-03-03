@@ -1,0 +1,54 @@
+﻿@model PagedList.IPagedList<MyLibrary.Model.Product>
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = ViewBag.Title;
+    Layout = "~/Views/Share/_LayoutSite.cshtml";
+}
+
+<section class="content3 mt-3">
+
+    <div class="container" id="loaisanpham">
+        <div class="col-md-4  mb-2 ">
+            @Html.Action("ListCategory", "Module")
+        </div>
+        <div class="row">
+            @if (Model.Count() > 0)
+            {
+                <h1 class="text-center">@ViewBag.Title</h1>
+                <div class="row">
+                    @foreach (var pro in Model)
+                    {
+                        <div class="col col-md-3 mb-2">
+                            <div class="card" style="width: 100%;">
+                                <a href="~/@pro.Slug">
+                                    <img src="~/Public/images/sp2.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body">
+                                    <h4 class="card-title text-center font18">
+                                      @pro.Name
+                                    </h4>
+                                    <h5 class="card-title font18">Giá: @pro.Price </h5>
+                                    <p class="card-text">Mô tả: @pro.Detail đ</p>
+                                    <a href="#" class="btn btn-primary">Đặt Mua</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+
+
+                </div>
+            }
+            @*@foreach(var cat in Model)
+                {
+                    @Html.Action("ProductHome", "Site", new { @catid = cat.Catid, @name = cat.Name })
+
+                }*@
+        </div>
+        <div class="col mb-1 phantrang">
+            @Html.PagedListPager(Model, Page => Url.Action("Index", "Site", new { Page, size = ViewBag.currentSize, slug = ViewBag.Slug }))
+        </div>
+    </div>
+</section>

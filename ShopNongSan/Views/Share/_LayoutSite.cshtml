@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/all.min.css" rel="stylesheet" />
+    <link href="~/Public/css/LayoutSite.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="LcsWzUcV"></script>
+    <section class="topbar m-3 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 top-left ">
+                    <ul class="list-main">
+                        <li><i class="fas fa-headphones-alt"></i><b>+060 (800) 801-582</b></li>
+                        <li><i class="far fa-envelope"></i><b>support@shophub.com</b></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 text-right" href=""><i class="fas fa-power-off"></i> Login</div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- End topbar -->
+
+    <section class="header bg-white p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <img class="img-fluid" src="~/Public/images/logo.png" />
+                </div>
+                <div class="col-md-2"><i class="fas fa-truck"></i><b>Miễn phí vận chuyển</b><br />Bán kính 100km</div>
+                <div class="col-md-2"><i class="fas fa-headset"></i><b>Hổ trợ 24/7</b><br /> Hotline: 19001909</div>
+                <div class="col-md-2"><i class="far fa-clock"></i><b>Giờ làm việc</b><br />T2->T7 GHC</div>
+                <div class="col-md-2"> <b><i class="fas fa-shopping-cart"></i></b></div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End header -->
+
+    <section class="main menu bg-dark">
+        <div class="container">
+            @Html.Action("MainMenu", "Module")
+        </div>
+    </section>
+    <!-- End main menu -->
+
+    @Html.Action("Slideshow", "Module")
+    <!-- End slide show -->
+    <!--End Category -->
+    <!-- End main content -->
+    <section class="clearfix content">
+        @RenderBody()
+    </section>
+
+
+    <section class="footer">
+
+        <footer class="footer">
+            <div class="site-footer p-4">
+                <div class="container">
+                    <div class="row footer-inner">
+                        <div class="col-xs-12 col-lg-3 col-md-3 col-sm-6">
+                            <div class="footer-widget">
+                                <h3 class="a-h3-footer">
+                                    <a href="">
+                                        <img class="img-fluid" src="~/Public/images/logo.png" />
+                                    </a>
+                                </h3>
+                                <ul class="list-menu ul-footer-contact">
+
+                                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> 175 Lý Thường Kiệt, Phường 6, Quận Tân Bình, TP Hồ Chí Minh</li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i> <a class="a-phone" href="tel:0123456789">0123 456 789</a></li>
+                                    <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">taducdsg@gmail.com</a></li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-3 col-lg-push-6 col-md-3 col-md-push-6 col-sm-6">
+                            <div class="footer-widget">
+                                <h3 class="a-h3-footer"><span>Tải App Mobile</span></h3>
+                                <div class="app">
+                                    <a href="#" target="_blank">
+                                        <img src="//bizweb.dktcdn.net/100/323/328/themes/673538/assets/app1.png?1607935121283" data-lazyload="//bizweb.dktcdn.net/100/323/328/themes/673538/assets/app1.png?1607935121283" alt="Ant Organic">
+                                    </a>
+                                    <a href="#" target="_blank">
+                                        <img src="//bizweb.dktcdn.net/100/323/328/themes/673538/assets/app2.png?1607935121283" data-lazyload="//bizweb.dktcdn.net/100/323/328/themes/673538/assets/app2.png?1607935121283" alt="Ant Organic">
+                                    </a>
+                                </div>
+                                <h3 class="a-h3-footer"><span>Mạng xã hội</span></h3>
+                                <div class="footer-social">
+                                    <a class="btn-facebook" href="" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                    <a class="btn-twitter" href="#" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                    <a class="btn-instagram" href="#" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    <a class="btn-youtube" href="" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                                    <a class="btn-google" href="#" target="_blank"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-2 col-lg-pull-3 col-md-2 col-md-pull-3 col-sm-4 col-mb">
+                            <div class="footer-widget">
+                                <h3><span>Hướng dẫn</span></h3>
+                                <ul class="list-menu">
+
+                                    <li><a href="/trangchu">Trang chủ</a></li>
+
+                                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
+
+                                    <li><a href="/tin-tuc">Tin tức</a></li>
+
+                                    <li><a href="/flash-deal">Hotdeal</a></li>
+
+                                    <li><a href="/collections/all">Sản phẩm</a></li>
+
+                                    <li><a href="/lien-he">Liên hệ</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-2 col-lg-pull-3 col-md-2 col-md-pull-3 col-sm-4 col-mb">
+                            <div class="footer-widget">
+                                <h3><span>Chính sách</span></h3>
+                                <ul class="list-menu">
+
+                                    <li><a href="/trang chu">Trang chủ</a></li>
+
+                                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
+
+                                    <li><a href="/tin-tuc">Tin tức</a></li>
+
+                                    <li><a href="/flash-deal">Hotdeal</a></li>
+
+                                    <li><a href="/collections/all">Sản phẩm</a></li>
+
+                                    <li><a href="/lien-he">Liên hệ</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-lg-2 col-lg-pull-3 col-md-2 col-md-pull-3 col-sm-4 col-mb">
+                            <div class="footer-widget no-border">
+                                <h3><span>Danh mục</span></h3>
+                                <ul class="list-menu">
+
+                                    <li><a href="/trang chu">Trang chủ</a></li>
+
+                                    <li><a href="/gioi-thieu">Giới thiệu</a></li>
+
+                                    <li><a href="/tin-tuc">Tin tức</a></li>
+
+                                    <li><a href="/flash-deal">Hotdeal</a></li>
+
+                                    <li><a href="/collections/all">Sản phẩm</a></li>
+
+                                    <li><a href="/lien-he">Liên hệ</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright clearfix">
+                <div class="container">
+                    <div class="inner clearfix">
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <span>© Bản quyền thuộc về <b>TaDuc</b> </span>|
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back-to-top show"><i class="fa  fa-arrow-circle-up"></i></div>
+
+                </div>
+            </div>
+        </footer>
+
+    </section>
+    <!-- End footer -->
+
+    <section class="copyright"></section>
+    <!-- End Coppyright -->
+
+
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 5000
+        })
+    </script>
+</body>
+</html>

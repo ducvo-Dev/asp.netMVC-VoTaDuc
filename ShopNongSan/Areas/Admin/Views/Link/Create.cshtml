@@ -1,0 +1,62 @@
+﻿@model MyLibrary.Model.Link
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 text-danger text-uppercase">
+                    <strong> Tạo thông tin Khách Hàng</strong>
+                </div>
+                <div class="col-md-6 text-right ">
+                    <button type="submit" class="btn btn-success btn-sm">
+                        <i class="fas fa-save"></i>Lưu[Cập Nhật]
+                    </button>
+                    <a class="btn btn-sm btn-info" href="@Url.Action("Index","Link")"><i class="fas fa-backward"></i>Quay về danh sách</a>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <label> Tên Khách hàng</label>
+                        @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label> Email </label>
+                        @Html.EditorFor(model => model.TypeLink, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TypeLink, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label> Số Điện Thoại</label>
+                        @Html.EditorFor(model => model.Tableid, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Tableid, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label> Trạng thái</label>
+                        @Html.DropDownListFor(model => model.Status, new[] { new SelectListItem { Text = "Xuất Bản", Value = "1" }, new SelectListItem { Text = "Chưa Xuất Bản", Value = "2" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+

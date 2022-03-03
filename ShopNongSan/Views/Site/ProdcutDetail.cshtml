@@ -1,0 +1,45 @@
+﻿@model MyLibrary.Model.Product
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Share/_LayoutSite.cshtml";
+}
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-6">
+            <img src="~/Public/images/category/@Model.Img" class="img-fluid" alt="san pham" />
+        </div>
+        <div class="col-md-6">
+            <h1>@Model.Name</h1>
+            <h3>@Model.Price</h3>
+        </div>
+    </div>
+    Bình luận
+    <div class="row my-3">
+        <div class="fb-comments" data-href="https://localhost:44357/@Model.Slug" data-width="100%" data-numposts="5"></div>
+    </div>
+    <h3>Sản Phẩm Cùng Loại</h3>
+    <div class="row my-4">
+        @foreach (var proother in ViewBag.ListOther)
+        {
+            <div class="col col-md-3 mb-2">
+                <div class="card" style="width: 100%;">
+                    <a href="~/@proother.Slug">
+                        <img src="~/Public/images/sp2.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <a href="~/@proother.Slug">
+                            <h4 class="card-title text-center font18">@proother.Name</h4>
+                        </a>
+                        <h5 class="card-title text-center font18">Giá: @proother.Price đ</h5>
+                        <p class="card-text">Mô tả: @proother.Detail</p>
+                        <a href="#" class="btn btn-primary">Đặt Mua</a>
+                    </div>
+
+                </div>
+
+            </div>  
+        }
+    </div>
+
+</div>

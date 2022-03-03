@@ -1,0 +1,15 @@
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\MyLibrary.dll.config
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\MyLibrary.dll
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\PagedList.dll
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\PagedList.Mvc.dll
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\PagedList.xml
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\bin\Debug\PagedList.Mvc.xml
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\obj\Debug\MyLibrary.csproj.CopyComplete
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\obj\Debug\MyLibrary.dll
+C:\Users\Admin\source\repos\VoTaDuc_2118110019\MyLibrary\obj\Debug\MyLibrary.pdb

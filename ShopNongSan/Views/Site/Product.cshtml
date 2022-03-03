@@ -1,0 +1,43 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<MyLibrary.Model.Product>
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Share/_LayoutSite.cshtml";
+}
+
+<section class="content3 mt-3">
+
+    <div class="container" id="loaisanpham">
+        <div class=" col-md-3  mb-3 ">
+            @Html.Action("ListCategory", "Module")
+        </div>
+        <h1 class="text-center">Tất Cả Sản Phẩm</h1>
+        <div class="row">
+            @foreach (var pro in Model)
+            {
+                <div class="col col-md-3 mb-2">
+                    <div class="card" style="width: 100%;">
+                        <a href="~/@pro.Slug">
+                            <img src="~/Public/images/sp2.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title text-center font18">
+                                @pro.Name
+                            </h4>
+                            <h5 class="card-title font18">Giá: @pro.Price đ </h5>
+                            <p class="card-text">Mô tả: @pro.Detail</p>
+                            <a href="#" class="btn btn-primary">Đặt Mua</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+        </div>
+        <div class="col mb-1 phantrang">
+            @Html.PagedListPager(Model, Page => Url.Action("Product", "Site", new { Page, size = ViewBag.currentSize }))
+        </div>
+    </div>
+</section>

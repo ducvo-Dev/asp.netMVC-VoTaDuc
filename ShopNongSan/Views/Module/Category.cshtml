@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MyLibrary.Model.Category>
+<section class="content mt-4">
+    <div class="container">
+        <h1 class="text-xl-center"> DANH MỤC SẢN PHẨM</h1>
+        <div class="row">
+            @foreach (var cat1 in Model)
+            {
+            <div class="col-md-4  mb-3 ">
+                <a href="~/@cat1.Slug">
+                    <img class="img-fluid" src="~/Public/images/category/@cat1.Img" alt="" />
+                </a>
+                    <a class="text-center text-info" href="~/@cat1.Slug">@cat1.Name</a>
+            </div>
+            }
+        </div>
+
+    </div>
+</section>

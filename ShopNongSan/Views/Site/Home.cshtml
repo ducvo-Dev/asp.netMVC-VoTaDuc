@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MyLibrary.Model.Category>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Share/_LayoutSite.cshtml";
+}
+
+@Html.Action("Category", "Module")
+<!--End Category -->
+
+<section class="content3 mt-3">
+
+    <div class="container" id="loaisanpham">
+        @foreach (var cat in Model)
+        {
+            @Html.Action("ProductHome", "Site", new { @catid = cat.Id, @name = cat.Name })
+        }
+    </div>
+</section>
+
+<section class="content3 content mt-3">
+    @Html.Action("ProductBuyHot", "Module")
+</section>
+<section class="content4 content mt-4">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6">
+
+                <img src="~/Public/images/banner_coltab3_1.png" />
+
+            </div>
+            <div class="col-md-6">
+
+                <img src="~/Public/images/banner_coltab3_2.png" />
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="content5 content mt-5">
+    @Html.Action("LastNew", "Module")
+</section>
+
+<section class="content6 content">
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-md-2">
+                <img src="~/Public/images/brand1.png" />
+            </div>
+            <div class="col-md-2">
+                <img src="~/Public/images/brand2.png" />
+            </div>
+            <div class="col-md-2">
+                <img src="~/Public/images/brand1.png" />
+            </div>
+            <div class="col-md-2">
+                <img src="~/Public/images/brand2.png" />
+            </div>
+            <div class="col-md-2">
+                <img src="~/Public/images/brand1.png" />
+            </div>
+            <div class="col-md-2">
+                <img src="~/Public/images/brand2.png" />
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<MyLibrary.Model.Product>
+
+@{
+    ViewBag.Title = "Trash";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6 text-danger text-uppercase">
+                <strong> Thùng Rác LOẠI SẢN PHẨM</strong>
+            </div>
+            <div class="col-md-6 text-right ">
+                <a class="btn btn-sm btn-info" href="@Url.Action("Index","Product")"><i class="fas fa-backward"></i>Quay về danh sách</a>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-body">
+        @Html.Partial("_XMessage")
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    <input type="checkbox" name="checkALL" />
+                </th>
+                <th>Hình ảnh</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Slug</th>
+                <th>Chi tiết sản phẩm</th>
+                <th>Giá </th>
+                <th>Giá khuyên mãi</th>
+                <th>Ngày Tạo</th>
+                <th>Ngày Sửa</th>
+                <th>Chức năng</th>
+                <th>ID</th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="checkALL" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Img)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Slug)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Detail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pricesale)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Created_At)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Updated_At)
+                    </td>
+                    <td>
+                    <a class="btn btn-sm btn-info" href="@Url.Action("Retrash","Product",new { id=item.Id})">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("Delete","Product",new { id=item.Id})">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
+
+
+

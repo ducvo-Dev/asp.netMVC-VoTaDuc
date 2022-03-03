@@ -1,0 +1,31 @@
+﻿@model MyLibrary.Model.Post
+@{
+    ViewBag.Title = "PostDetail";
+    Layout = "~/Views/Share/_LayoutSite.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class=" col-12">
+            <h1>
+                @Model.Title
+            </h1>
+            <p class="content"> @Html.Raw(Model.Detail)</p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class=" col-md-12">
+            <h3> Bài viết Khác</h3>
+            <ul>
+                @foreach (var row_other in ViewBag.ListOther)
+                {
+                    <li>
+                        <a href="~/@row_other.Slug">
+                            @row_other.Title
+                        </a>
+                    </li>
+                   }
+            </ul>
+        </div>
+    </div>
+</div>

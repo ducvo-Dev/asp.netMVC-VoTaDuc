@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MyLibrary.Model.Contact>
+@{
+    ViewBag.Title = "Trash";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6 text-danger text-uppercase">
+                <strong> Thùng Rác Thông tin khách hàng </strong>
+            </div>
+            <div class="col-md-6 text-right ">
+                <a class="btn btn-sm btn-info" href="@Url.Action("Index","Contact")"><i class="fas fa-backward"></i>Quay về danh sách</a>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-body">
+        @Html.Partial("_XMessage")
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    <input type="checkbox" name="checkALL" />
+                </th>
+                <th>Tên Khách Hàng</th>
+                <th>Email</th>
+                <th>Số Điện Thoại</th>
+                <th>Ngày Tạo</th>
+                <th>Ngày Sửa</th>
+                <th>Chức năng</th>
+                <th>ID</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="checkALL" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Created_At)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Updated_At)
+                    </td>
+                    <td>
+
+                        <a class="btn btn-sm btn-info" href="@Url.Action("Retrash","Contact",new { id=item.Id})">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="btn btn-sm btn-danger" href="@Url.Action("Delete","Contact",new { id=item.Id})">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
